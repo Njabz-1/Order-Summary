@@ -1,147 +1,175 @@
-/* Styling Base */
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500&display=swap');
-$font-stack:'Red Hat Display',sans-serif;
-$Pale-blue: hsl(225, 100%, 94%);
-$Bright-blue: hsl(245, 75%, 52%);
-$Very-pale-blue: hsl(225, 100%, 98%);
-$Desaturated-blue: hsl(224, 23%, 55%);
-$Dark-blue: hsl(223, 47%, 23%);
-*{  
-    padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+* {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: $font-stack;
-    background-image: url(/images/pattern-background-desktop.svg);
-    line-height: 1.6;
-    font-size: 18px;
-    color: #333;
-}
-
-img {
-    width: 100%;
-}
-
-h1, h2 {
-    margin: 10px 0;
-}
-
-p {
-    margin: 10px 0;
-}
-
-a {
-    text-decoration: none;
-    color: black; 
-} 
-
-html {
-    font-size: 60%;
-}
-
-/* Container */
-
-.container {
-    height: 100vh;
-    width: 100vw;
+    font-family: 'Red Hat Display',
+        sans-serif;
+    min-height: 100vh;
+    background-image: url(https://www.digitshack.com/codepen/mentor1/pattern-background-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: hsl(225, 100%, 94%);
+    position: relative;
+    font-size: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+.container {
+    height: 90vh;
+    width: 80vw;
+    max-width: 450px;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+}
 
-/* Card */
+.text-content {
+    padding: 7%;
+    text-align: center;
+}
 
-.card {
-    background-color: white;
-    width: 40vh;
-    border-radius: 2rem;    
+.title {
+    color: hsl(223, 47%, 23%);
+    font-weight: 900;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
 
+.text-content p.subtitle {
+    color: #8a8a8a;
+    margin-bottom: 25px;
+}
 
-    .image-wrapper{
-        position: relative;
+.plan-box {
+    background-color: hsl(225, 100%, 98%);
+    border-radius: 12px;
+    display: flex;
+    padding: 25px;
+    align-items: center;
+    justify-content: space-between;
+}
 
-        .hero {
-            width: 100%;
-            border-top-left-radius: 1rem;
-            border-top-right-radius: 1rem;
-            padding: 0;
-        }
+.plan-box-left {
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.plan-box-left div {
+    margin-left: 20px;
+}
+
+.plan-box-left div h5 {
+    font-weight: 900;
+    font-size: 15px;
+    color: hsl(223, 47%, 23%);
+}
+
+.plan-box-left div p {
+    font-size: 14px;
+    color: #8a8a8a;
+}
+
+.plan-box a {
+    font-weight: 900;
+    color: hsl(223, 47%, 23%);
+    transition: color .3s ease;
+}
+
+.plan-box a:hover {
+    text-decoration: none;
+    color: hsl(245, 75%, 52%);
+}
+
+a.proceed-btn {
+    display: block;
+    text-decoration: none;
+    color: white;
+    background-color: hsl(245, 75%, 52%);
+    padding: 20px 0;
+    border-radius: 12px;
+    margin: 30px 0;
+    transition: background-color .3s ease;
+}
+
+a.proceed-btn:hover {
+    background-color: hsl(224, 23%, 55%);
+}
+
+a.cancel-btn {
+    color: hsl(224, 23%, 55%);
+    text-decoration: none;
+    font-weight: 900;
+    transition: color .3s ease;
+}
+
+a.cancel-btn:hover {
+    color: hsl(223, 47%, 23%);
+}
+
+@media only screen and (max-width: 425px) {
+    body {
+        background-image: url(https://www.digitshack.com/codepen/mentor1/pattern-background-mobile.svg);
+        font-size: 14px;
     }
 
-    .title{
-        font-size: 2.2rem;
-        text-align: center;
-        color: $Dark-blue;
-        font-weight: 900;
-
-        margin: 0;
+    .container {
+        max-width: 87%;
     }
 
-    .description{
-        font-size: 1.5rem;
-        text-align: center;
-        color:$Desaturated-blue;
-        padding: 2rem;
+    .title {
+        font-size: 23px;
     }
 
-    .price-block{
-        background-color: $Very-pale-blue;
-        border-radius: 1rem;
-        padding: 2rem;
-        width: 80%;
-        display: flex;
-        color:$Desaturated-blue;
-        justify-content: space-between;
-        margin: 0 auto;
-
-        .row-wrapper{
-            display: flex;
-            align-items: center;
-            font-size: 1.5rem;
-
-            justify-content: center;
-        }
-
-        img {
-            width: 3rem;
-        }
-        h4{
-            width: 1rem;
-            font-weight: 900;
-            color: #333;
-        }
-
-        .info{
-            color: $Bright-blue;
-            text-decoration-line: underline;
-            cursor: pointer;
-            &:hover {
-                color: plum;
-                text-decoration: none;
-            }
-        }
+    div.plan-box {
+        padding: 12px;
     }
 
-    .payment-block{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 3rem;
-        .payment {
-            background-color: $Bright-blue;
-            text-align: center;
-            border-radius: 1rem;
-            color: white;
-            box-shadow:  0px 20px 14px 1px $Pale-blue;
-            padding: 2rem;
-        }
-        .cancel {
-            padding-top: 2rem;
-            text-align: center;
-        }
+    .plan-box-left div {
+        margin-left: 10px;
     }
 
+    a.proceed-btn,
+    a.cancel-btn,
+    .plan-box a {
+        font-size: 13px;
+    }
+
+    .text-content {
+        padding: 9% 7%;
+    }
+}
+
+/* Youtube link */
+.link {
+    position: fixed;
+    background-color: #D12322;
+    padding: 23px 40px;
+    right: -87px;
+    border-radius: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    transform: rotate(-90deg);
+    font-size: 18px;
+    font-weight: 500;
+    color: #FFF;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .1s ease-in-out;
+}
+
+.link i {
+    padding-left: 7px;
+}
+
+.link:hover {
+    text-decoration: underline;
+    background-color: black;
 }
